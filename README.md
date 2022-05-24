@@ -10,6 +10,7 @@ GPG_SEC_KEY_ID=$(gpg --list-secret-keys --keyid-format LONG | grep sec | tail -1
 gpg --armor --export ${GPG_KEY_ID} | cat
 
 git config user.signingkey ${GPG_SEC_KEY_ID}
+
 git config gpg.program gpg
 
 git tag -s v0.1.0.0
